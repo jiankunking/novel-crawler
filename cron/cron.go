@@ -17,12 +17,14 @@ func Minutes() {
 }
 
 func grab() {
-	fmt.Println(time.Now().Format("2006-01-02 15:04:05"))
+	fmt.Println(time.Now().Format("2006-01-02 15:04:05") + " 开始检查是否有更新")
 
 	go service.CheckJianLaiUpdate()
 
 	go service.CheckMaoShanYiGuUpdate()
 
 	go service.CheckMuShenJiUpdate()
+
+	fmt.Println(time.Now().Format("2006-01-02 15:04:05") + " 更新检测结束")
 
 }

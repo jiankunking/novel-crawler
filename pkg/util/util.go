@@ -30,6 +30,7 @@ func TrimString(item string) string {
 	item = strings.Replace(item, "百", "", -1)
 	item = strings.Replace(item, "十", "", -1)
 
+	item = strings.Replace(item, "零", "0", -1)
 	item = strings.Replace(item, "一", "1", -1)
 	item = strings.Replace(item, "二", "2", -1)
 	item = strings.Replace(item, "三", "3", -1)

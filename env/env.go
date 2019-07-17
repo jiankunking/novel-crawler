@@ -21,6 +21,8 @@ var (
 
 	// 牧神记起始章节
 	MU_SHEN_JI_START_SECTION = 0
+
+	GRAB_INTERVAL = "0 0/5 * * * ?"
 )
 
 func init() {
@@ -57,5 +59,11 @@ func init() {
 		DING_TALK_HOOK = "https://oapi.dingtalk.com/robot/send?access_token=" + accessToken
 	}
 	fmt.Println(DING_TALK_HOOK)
+
+	grabInterval := os.Getenv("GRAB_INTERVAL")
+	if !util.IsEmpty(grabInterval) {
+		GRAB_INTERVAL = grabInterval
+	}
+	fmt.Println("定时间隔：" + GRAB_INTERVAL)
 
 }

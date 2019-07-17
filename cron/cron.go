@@ -6,13 +6,14 @@ import (
 
 	"github.com/robfig/cron"
 
+	"github.com/jiankunking/novel-crawler/env"
 	"github.com/jiankunking/novel-crawler/pkg/service"
 )
 
 func Minutes() {
 	c := cron.New()
 	//每5分钟 一次
-	c.AddFunc("0 0/1 * * * ?", grab)
+	c.AddFunc(env.GRAB_INTERVAL, grab)
 	c.Start()
 }
 

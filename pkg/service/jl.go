@@ -2,7 +2,6 @@ package service
 
 import (
 	"fmt"
-	"strconv"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
@@ -31,13 +30,7 @@ func CheckJianLaiUpdate() {
 	item = item[startIndex : len(item)-startIndex]
 	//fmt.Println(item)
 
-	item = util.TrimString(item)
-
-	current, err := strconv.Atoi(item)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	current := util.TakeChineseNumberFromString(item)
 	href, _ := doc.Find("div.listmain").Find("dd").Eq(0).Find("a").Attr("href")
 	//fmt.Println(href)
 	if current > env.JIAN_LAI_START_SECTION {

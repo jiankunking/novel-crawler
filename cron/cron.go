@@ -12,7 +12,7 @@ import (
 func Minutes() {
 	c := cron.New()
 	//每5分钟 一次
-	c.AddFunc("0 0/5 * * * ?", grab)
+	c.AddFunc("0 0/1 * * * ?", grab)
 	c.Start()
 }
 

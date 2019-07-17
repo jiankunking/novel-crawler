@@ -2,7 +2,6 @@ package service
 
 import (
 	"fmt"
-	"strconv"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
@@ -31,13 +30,8 @@ func CheckMuShenJiUpdate() {
 	startIndex := len("第")
 	item = item[startIndex : len(item)-startIndex]
 	// fmt.Println(item)
-	item = util.TrimString(item)
-	// fmt.Println(item)
-	current, err := strconv.Atoi(item)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	current := util.TakeChineseNumberFromString(item)
+
 	href, _ := doc.Find("div.box_con").Find("dd").Eq(0).Find("a").Attr("href")
 	if current > env.MU_SHEN_JI_START_SECTION {
 		env.MU_SHEN_JI_START_SECTION = current

@@ -20,15 +20,15 @@ func IsEmpty(str string) bool {
 }
 
 func TrimString(item string) string {
-	item = strings.Replace(item, "亿", "", -1)
-	item = strings.Replace(item, "万", "", -1)
-	item = strings.Replace(item, "仟", "", -1)
-	item = strings.Replace(item, "佰", "", -1)
-	item = strings.Replace(item, "拾", "", -1)
+	item = strings.Replace(item, "亿", "00000000", -1)
+	item = strings.Replace(item, "万", "0000", -1)
+	item = strings.Replace(item, "仟", "000", -1)
+	item = strings.Replace(item, "佰", "00", -1)
+	item = strings.Replace(item, "拾", "0", -1)
 
-	item = strings.Replace(item, "千", "", -1)
-	item = strings.Replace(item, "百", "", -1)
-	item = strings.Replace(item, "十", "", -1)
+	item = strings.Replace(item, "千", "000", -1)
+	item = strings.Replace(item, "百", "00", -1)
+	item = strings.Replace(item, "十", "0", -1)
 
 	item = strings.Replace(item, "零", "0", -1)
 	item = strings.Replace(item, "一", "1", -1)

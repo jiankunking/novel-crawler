@@ -20,7 +20,7 @@ var (
 	MAO_SHAN_YI_GU_START_SECTION = 0
 
 	// 牧神记起始章节
-	MU_SHEN_JI_START_SECTION = 0
+	//MU_SHEN_JI_START_SECTION = 0
 
 	GRAB_INTERVAL = "0 0/5 * * * ?"
 )
@@ -45,14 +45,14 @@ func init() {
 	}
 	fmt.Println("maoshanyigu:" + index)
 
-	index = os.Getenv("MU_SHEN_JI_START_SECTION")
-	if !util.IsEmpty(index) {
-		MU_SHEN_JI_START_SECTION, err = strconv.Atoi(index)
-		if err != nil {
-			log.Fatal(err)
-		}
-	}
-	fmt.Println("mushenji:" + index)
+	//index = os.Getenv("MU_SHEN_JI_START_SECTION")
+	//if !util.IsEmpty(index) {
+	//	MU_SHEN_JI_START_SECTION, err = strconv.Atoi(index)
+	//	if err != nil {
+	//		log.Fatal(err)
+	//	}
+	//}
+	//fmt.Println("mushenji:" + index)
 
 	accessToken := os.Getenv("ACCESS_TOKEN")
 	if !util.IsEmpty(accessToken) {

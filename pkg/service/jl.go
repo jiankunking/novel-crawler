@@ -3,8 +3,7 @@ package service
 import (
 	"fmt"
 	"strings"
-
-	"github.com/PuerkitoBio/goquery"
+	"time"
 
 	"github.com/jiankunking/novel-crawler/env"
 	"github.com/jiankunking/novel-crawler/pkg/util"
@@ -12,7 +11,8 @@ import (
 
 func CheckJianLaiUpdate() {
 	index := "http://www.shuquge.com/txt/8659/index.html"
-	doc, err := goquery.NewDocument(index)
+	doc, err := NewDocumentWithTimeout(index, time.Duration(5)*time.Second)
+	//doc, err := goquery.NewDocument(index)
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -5,8 +5,7 @@ import (
 	"log"
 	"strconv"
 	"strings"
-
-	"github.com/PuerkitoBio/goquery"
+	"time"
 
 	"github.com/jiankunking/novel-crawler/env"
 	"github.com/jiankunking/novel-crawler/pkg/util"
@@ -14,7 +13,8 @@ import (
 
 func CheckMaoShanYiGuUpdate() {
 	index := "http://www.biquge.cc/html/307/307566/"
-	doc, err := goquery.NewDocument(index)
+	//doc, err := goquery.NewDocument(index)
+	doc, err := NewDocumentWithTimeout(index, time.Duration(5)*time.Second)
 	if err != nil {
 		log.Fatal(err)
 	}

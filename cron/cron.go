@@ -1,9 +1,6 @@
 package cron
 
 import (
-	"fmt"
-	"time"
-
 	"github.com/robfig/cron"
 
 	"github.com/jiankunking/novel-crawler/env"
@@ -18,7 +15,7 @@ func Minutes() {
 }
 
 func grab() {
-	fmt.Println(time.Now().Format("2006-01-02 15:04:05") + " 开始检查是否有更新")
+	//fmt.Println(time.Now().Format("2006-01-02 15:04:05") + " 开始检查是否有更新")
 
 	go service.CheckJianLaiUpdate()
 
@@ -26,6 +23,6 @@ func grab() {
 
 	//go service.CheckMuShenJiUpdate()
 
-	fmt.Println(time.Now().Format("2006-01-02 15:04:05") + " 更新检测结束")
+	//fmt.Println(time.Now().Format("2006-01-02 15:04:05") + " 更新检测结束")
 
 }
